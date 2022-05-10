@@ -19,11 +19,7 @@ public class Main {
         //===============================
 
         int bLength = board.length;
-        for (int i = 0; i < bLength; i++) {
-            for (int j = 0; j < bLength; j++) {
-                board[i][j] = 0;
-            }
-        }
+
         queenCells.add(0 + " " + 0);
         takenCellsAllocator(0,0,board);
 
