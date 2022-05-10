@@ -1,3 +1,6 @@
 # Anotheria-Bootcamp
 
-Knight task is in progress.
+Queen8 - 8 chess queen puzzle.
+
+Knight8 - Visit all cells on chess board with knight algorithm.
+
