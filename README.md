@@ -1,8 +1,8 @@
 # Anotheria-Bootcamp
 
-Queen8 - 8 chess queen puzzle. 
+Queen8 - 8 chess queen puzzle. (All possible solutions) 
 
-Knight8 - Visit all cells on chess board with knight algorithm.
+Knight8 - Visit all cells on chess board with a knight algorithm.
 
-MagicSquareN - Creation of a magic circle from an odd 'n'. **UPGRADE UNDERGOING**
+MagicSquareN - Creation of a magic circle from an odd, singly- and doubly-even 'n'. 
 
