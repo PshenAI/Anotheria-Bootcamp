@@ -123,7 +123,7 @@ public class Main {
 
         int[][] result = new int[n][n];
 
-        for (int i = 0; i < n; i++) {
+        for (int i = 0; i < n; i++) {//filling main square with 4 magic subsquares
             for (int j = 0; j < n; j++) {
                 int quadrant = (i / nHalf) * 2 + (j / nHalf);
                 result[i][j] = subSquare[i % nHalf][j % nHalf];
@@ -134,7 +134,7 @@ public class Main {
         int leftCols = nHalf / 2;
         int rightCols = leftCols - 1;
 
-        for (int i = 0; i < nHalf; i++){
+        for (int i = 0; i < nHalf; i++){//switching key positions
             for (int j = 0; j < n; j++) {
                 if (j < leftCols || j >= n - rightCols
                         || (j == leftCols && i == leftCols)) {
