@@ -8,7 +8,7 @@ import java.util.Arrays;
 
 public class Main {
 
-    private static final int n = 5;
+    private static final int n = 3;
     public static int[][] mSquare = new int[n][n];
     public static int mLength = mSquare.length;
     public static int desiredSum = n*((n*n) + 1) / 2;
