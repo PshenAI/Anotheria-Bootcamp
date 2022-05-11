@@ -1,5 +1,9 @@
 package main;
 
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.PrintWriter;
 import java.util.Arrays;
 
 public class Main {
@@ -7,14 +11,15 @@ public class Main {
     private static final int n = 5;
     public static int[][] mSquare = new int[n][n];
     public static int mLength = mSquare.length;
+    public static int desiredSum = n*((n*n) + 1) / 2;
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
 
         //===============================
         //SOLUTION
         //===============================
 
-        int desiredSum = n*((n*n) + 1) / 2;
+
         int posX = 0, posY = 0;
         for (int i = 1; i <= n*n; i++) {
             if(i == 1){//
@@ -45,12 +50,25 @@ public class Main {
         //DISPLAY
         //===============================
 
-        for (int i = 0; i < mLength; i++) {
-            for (int j = 0; j < mLength; j++) {
-                System.out.print(mSquare[i][j] + " ");
+        String fileName = "MagicSquare" + n + ".txt";
+
+        File fl = new File(fileName);
+        if(fl.createNewFile()){
+            try(PrintWriter pw = new PrintWriter(new FileWriter(fileName))){
+                for (int i = -1; i < mLength + 1; i++) {
+                    for (int j = 0; j < mLength; j++) {
+                        if(i == -1 || i == mLength){
+                            pw.print("***");
+                        } else {
+                            pw.print(mSquare[i][j] + "  ");
+                        }
+                    }
+                    pw.println();
+                }
             }
-            System.out.println();
         }
+
+
     }
 
     public static boolean diagCheck1(){//checks diagonals
@@ -58,7 +76,7 @@ public class Main {
         for (int j = 0; j < mLength; j++) {
             sum = sum + mSquare[j][j];
         }
-        return sum == mLength * mLength;
+        return sum == desiredSum;
     }
 
     public static boolean diagCheck2(){//checks diagonals
@@ -68,7 +86,7 @@ public class Main {
             sum = sum + mSquare[j][k];
             k--;
         }
-        return sum == mLength * mLength;
+        return sum == desiredSum;
     }
 
 
@@ -77,7 +95,7 @@ public class Main {
         for (int j = 0; j < mLength; j++) {
             sum = sum + mSquare[j][y];
         }
-        return sum == mLength * mLength;
+        return sum == desiredSum;
     }
 
     public static boolean hrzntCheck(int x){//checks horizontal line
@@ -85,7 +103,7 @@ public class Main {
         for (int j = 0; j < mLength; j++) {
             sum = sum + mSquare[x][j];
         }
-        return sum == mLength * mLength;
+        return sum == desiredSum;
     }
 
 }

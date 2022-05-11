@@ -19,32 +19,43 @@ public class Main {
         //===============================
 
         int bLength = board.length;
+        int qX = 0;
+        int qY = 0;
 
-        queenCells.add(0 + " " + 0);
-        takenCellsAllocator(0,0,board);
+        queenCells.add(qX + " " + qY);
+        takenCellsAllocator(qX,qY,board);
 
         //===============================
         //SOLUTION
         //===============================
 
+        int resCount = 0;
         int count = 0;
-        for (int i = 1; i < bLength; i++) {
-            for (int j = 1; j < bLength; j++) {
-                if(count > 0){
-                    count = 0;
+        for (int i = 0; i < bLength; i++) {
+            if(i != qX){
+                for (int j = 0; j < bLength; j++) {
+                    if(j != qY){
+                        if(count > 0){
+                            count = 0;
+                        }
+                        if(!isTaken(i,j) && !isBroke(i,j)){//sets new queen
+                            queenCells.add(i + " " + j);
+                            takenCellsAllocator(i,j,board);
+                            if(i == 7){
+                                resCount++;
+
+                            }
+                            count = 1;
+                            break;
+                        }
+                    }
                 }
-                if(!isTaken(i,j) && !isBroke(i,j)){//sets new queen
-                    queenCells.add(i + " " + j);
-                    takenCellsAllocator(i,j,board);
-                    count = 1;
-                    break;
+                if(count < 1){//deletes old brokeCells if previous in chain was deleted
+                    String notBroke = String.valueOf(i);
+                    removeOldQueen(count, notBroke);
+                    i = i - 2;
+                    count--;
                 }
-            }
-            if(count < 1){//deletes old brokeCells if previous in chain was deleted
-                String notBroke = String.valueOf(i);
-                removeOldQueen(count, notBroke);
-                i = i - 2;
-                count--;
             }
         }
 
@@ -52,6 +63,7 @@ public class Main {
         //DISPLAY
         //===============================
 
+        System.out.println(resCount);
         System.out.println(queenCells);
 
         for (int i = 0; i < bLength; i++) {
