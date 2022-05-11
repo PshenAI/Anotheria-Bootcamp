@@ -4,11 +4,10 @@ import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.util.Arrays;
 
 public class Main {
 
-    private static final int n = 3;
+    private static final int n = 5;
     public static int[][] mSquare = new int[n][n];
     public static int mLength = mSquare.length;
     public static int desiredSum = n*((n*n) + 1) / 2;
