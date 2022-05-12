@@ -4,11 +4,42 @@ import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
+
+import static main.Main.n;
+
+class MultiDoublySquare implements Runnable{
+    int forI;
+    int forJ;
+    int compI;
+    int compJ;
+    int[][] mSquare;
+
+    public MultiDoublySquare(int forI, int forJ, int compI, int compJ, int[][] mSquare) {
+        this.forI = forI;
+        this.forJ = forJ;
+        this.compI = compI;
+        this.compJ = compJ;
+        this.mSquare = mSquare;
+    }
+
+    @Override
+    public void run() {
+        System.out.println("I'm working!");
+        for (int i = forI; i < compI; i++){//All corners and center
+            for (int j = forJ; j < compJ; j++){
+                mSquare[i][j] = (n*n + 1) - mSquare[i][j];
+            }
+        }
+        System.out.println("Work done!");
+    }
+}
 
 public class Main {
 
-    private static int n;
+    public static int n;
 
     public static void main(String[] args) throws IOException {
         Scanner sc = new Scanner(System.in);
@@ -21,7 +52,6 @@ public class Main {
                break;
             }
         }
-
         int[][] mSquare = new int[n][n];
 
         //===============================
@@ -57,8 +87,6 @@ public class Main {
                 }
             }
         }
-
-
     }
 
     //===============================
@@ -66,6 +94,11 @@ public class Main {
     //===============================
 
     private static void doublyEvenMSquare(int[][] mSquare) {
+
+        int[] iArr = {0,0,3*n/4,3*n/4,n/4};
+        int[] jArr = {0,3*n/4,0,3*n/4,n/4};
+        int[] compI = {n/4,n/4,n,n,3*n/4};
+        int[] compJ = {n/4,n,n/4,n,3*n/4};
 
         //main formula -- (n*n+1)-mSquare[i][j]
 
@@ -77,36 +110,55 @@ public class Main {
             }
         }
 
-        for ( i = 0; i < n/4; i++){//top-left corner
-            for ( j = 0; j < n/4; j++){
-                mSquare[i][j] = (n*n + 1) - mSquare[i][j];
-            }
+        //===============================
+        //MULTITHREAD SOLUTION
+        //===============================
+
+        List<Thread> threadList = new ArrayList<>();
+
+        for (int k = 0; k < 5; k++) {
+            threadList.add(new Thread(new MultiDoublySquare(iArr[k],jArr[k],compI[k],compJ[k], mSquare)));
         }
 
-        for ( i = 0; i < n/4; i++){//top-right corner
-            for ( j = 3 * (n/4); j < n; j++){
-                mSquare[i][j] = (n*n + 1) - mSquare[i][j];
-            }
-
+        for (int k = 0; k < 5; k++) {
+            threadList.get(k).start();
         }
 
-        for ( i = 3 * n/4; i < n; i++){//bottom-left corner
-            for ( j = 0; j < n/4; j++){
-                mSquare[i][j] = (n*n + 1) - mSquare[i][j];
-            }
-        }
 
-        for ( i = 3 * n/4; i < n; i++){//bottom-right corner
-            for ( j = 3 * n/4; j < n; j++){
-                mSquare[i][j] = (n*n + 1) - mSquare[i][j];
-            }
-        }
+        //===============================
+        //NON MULTITHREAD SOLUTION
+        //===============================
 
-        for ( i = n/4; i < 3 * n/4; i++){//center of square
-            for ( j = n/4; j < 3 * n/4; j++){
-                mSquare[i][j] = (n*n + 1) - mSquare[i][j];
-            }
-        }
+//        for ( i = 0; i < n/4; i++){//top-left corner
+//            for ( j = 0; j < n/4; j++){
+//                mSquare[i][j] = (n*n + 1) - mSquare[i][j];
+//            }
+//        }
+//
+//        for ( i = 0; i < n/4; i++){//top-right corner
+//            for ( j = 3 * (n/4); j < n; j++){
+//                mSquare[i][j] = (n*n + 1) - mSquare[i][j];
+//            }
+//
+//        }
+//
+//        for ( i = 3 * n/4; i < n; i++){//bottom-left corner
+//            for ( j = 0; j < n/4; j++){
+//                mSquare[i][j] = (n*n + 1) - mSquare[i][j];
+//            }
+//        }
+//
+//        for ( i = 3 * n/4; i < n; i++){//bottom-right corner
+//            for ( j = 3 * n/4; j < n; j++){
+//                mSquare[i][j] = (n*n + 1) - mSquare[i][j];
+//            }
+//        }
+//
+//        for ( i = n/4; i < 3 * n/4; i++){//center of square
+//            for ( j = n/4; j < 3 * n/4; j++){
+//                mSquare[i][j] = (n*n + 1) - mSquare[i][j];
+//            }
+//        }
     }
 
     //===============================
