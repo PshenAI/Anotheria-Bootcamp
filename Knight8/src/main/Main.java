@@ -50,7 +50,7 @@ public class Main {
             if ( potentialX < 0 || potentialX > 7 || potentialY < 0 || potentialY > 7 ){//within border check
                 continue;
             }
-            if ( board[potentialX][potentialY] == 1 ){//check if knight already 've been here
+            if ( board[potentialX][potentialY] > 0 ){//check if knight already 've been here
                 continue;
             }
             currentX = potentialX; currentY = potentialY;
@@ -69,7 +69,7 @@ public class Main {
     }
 
     public static void moveForward(){
-        board[currentX][currentY] = 1;
+        board[currentX][currentY] = counter;
         takenRowCell[counter] = currentX;
         takenColCell[counter] = currentY;
         counter++;
