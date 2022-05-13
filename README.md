@@ -6,3 +6,5 @@
 
 + MagicSquareN - Creation of a magic circle from an odd, singly- and doubly-even 'n'. 
   + (UPGRADE) Multithread solution for doubly-even 'n'.
+
++ VillageClub - Counts all probabilities for 2^64.

@@ -4,8 +4,6 @@ import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Scanner;
 
 import static main.Main.n;
@@ -27,7 +25,7 @@ class MultiDoublySquare implements Runnable{
 
     @Override
     public void run() {
-        System.out.println("I'm working!");
+        System.out.println("Thread started!");
         for (int i = forI; i < compI; i++){//All corners and center
             for (int j = forJ; j < compJ; j++){
                 mSquare[i][j] = (n*n + 1) - mSquare[i][j];
@@ -57,6 +55,8 @@ public class Main {
         //===============================
         //SOLUTION
         //===============================
+        long nano1 = System.nanoTime();
+
 
         if(n % 2 != 0){
             mSquare = oddMSquare(n);
@@ -65,6 +65,10 @@ public class Main {
         } else {
             mSquare =singlyEvenMSquare(n);
         }
+
+        long nano2 = System.nanoTime();
+
+        System.out.println(nano2 - nano1);
 
         //===============================
         //DISPLAY
@@ -110,19 +114,19 @@ public class Main {
             }
         }
 
-        //===============================
-        //MULTITHREAD SOLUTION
-        //===============================
-
-        List<Thread> threadList = new ArrayList<>();
-
-        for (int k = 0; k < 5; k++) {
-            threadList.add(new Thread(new MultiDoublySquare(iArr[k],jArr[k],compI[k],compJ[k], mSquare)));
-        }
-
-        for (int k = 0; k < 5; k++) {
-            threadList.get(k).start();
-        }
+//        //===============================
+//        //MULTITHREAD SOLUTION
+//        //===============================
+//
+//        List<Thread> threadList = new ArrayList<>();
+//
+//        for (int k = 0; k < 5; k++) {
+//            threadList.add(new Thread(new MultiDoublySquare(iArr[k],jArr[k],compI[k],compJ[k], mSquare)));
+//        }
+//
+//        for (int k = 0; k < 5; k++) {
+//            threadList.get(k).start();
+//        }
 
 
         //===============================
@@ -139,7 +143,6 @@ public class Main {
 //            for ( j = 3 * (n/4); j < n; j++){
 //                mSquare[i][j] = (n*n + 1) - mSquare[i][j];
 //            }
-//
 //        }
 //
 //        for ( i = 3 * n/4; i < n; i++){//bottom-left corner
