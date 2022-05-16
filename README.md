@@ -8,3 +8,5 @@
   + (UPGRADE) Multithread solution for doubly-even 'n'.
 
 + VillageClub - Counts all probabilities for 2^64.
+
++ ConcurrentMapTest - Different solutions for concurrent map access.

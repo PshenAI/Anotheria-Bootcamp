@@ -4,6 +4,8 @@ import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 import static main.Main.n;
@@ -114,19 +116,19 @@ public class Main {
             }
         }
 
-//        //===============================
-//        //MULTITHREAD SOLUTION
-//        //===============================
-//
-//        List<Thread> threadList = new ArrayList<>();
-//
-//        for (int k = 0; k < 5; k++) {
-//            threadList.add(new Thread(new MultiDoublySquare(iArr[k],jArr[k],compI[k],compJ[k], mSquare)));
-//        }
-//
-//        for (int k = 0; k < 5; k++) {
-//            threadList.get(k).start();
-//        }
+        //===============================
+        //MULTITHREAD SOLUTION
+        //===============================
+
+        List<Thread> threadList = new ArrayList<>();
+
+        for (int k = 0; k < 5; k++) {
+            threadList.add(new Thread(new MultiDoublySquare(iArr[k],jArr[k],compI[k],compJ[k], mSquare)));
+        }
+
+        for (int k = 0; k < 5; k++) {
+            threadList.get(k).start();
+        }
 
 
         //===============================

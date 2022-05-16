@@ -21,13 +21,13 @@ public class Main {
 
         List<String> sameFolks = new ArrayList<>();
 
-        Long nano1 = System.currentTimeMillis();
-
         boolean check = true;
 
         //===============================
         //SOLUTION
         //===============================
+
+        Long nano1 = System.currentTimeMillis();
 
         for (long i = 1; check; i++) {
             long desiredSum = (long)(sum * const1);
@@ -56,7 +56,6 @@ public class Main {
             if(sum > earthPop * 1000000000){
                 check = false;
             }
-            System.out.println(i);
         }
 
         Long nano2 = System.currentTimeMillis();
