@@ -10,3 +10,5 @@
 + VillageClub - Counts all probabilities for 2^64.
 
 + ConcurrentMapTest - Different solutions for concurrent map access.
+
++ NetworkSocketTask - Examples of TCP and UDP connections with socket.
