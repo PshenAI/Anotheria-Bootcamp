@@ -12,3 +12,4 @@
 + ConcurrentMapTest - Different solutions for concurrent map access.
 
 + NetworkSocketTask - Examples of TCP and UDP connections with socket.
+  + (UPGRADE) File transfer between server and client.
