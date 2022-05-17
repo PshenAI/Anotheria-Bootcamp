@@ -1,4 +1,4 @@
-package main;
+package main.tcpnudp;
 
 import java.io.IOException;
 import java.io.InputStream;

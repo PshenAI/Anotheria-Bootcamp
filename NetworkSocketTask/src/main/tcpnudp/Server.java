@@ -1,5 +1,6 @@
-package main;
+package main.tcpnudp;
 
+import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
@@ -7,6 +8,9 @@ import java.net.*;
 
 
 class RequestHandler implements Runnable{
+
+    private static final File storage = new File("C:\\Users\\Velvet X\\Documents\\Java Studies" +
+            "\\Anotheria-Bootcamp\\NetworkSocketTask\\storage");
     Socket comSocket;
     Socket dataSocket;
 
@@ -45,7 +49,7 @@ public class Server {
         //===============================
 
         try(ServerSocket comSocket = new ServerSocket(COMPORT);
-        ServerSocket dataSocket = new ServerSocket(DATAPORT) ){
+        ServerSocket dataSocket = new ServerSocket(DATAPORT)){
             while(true){
                 System.out.println("Server on, waiting for requests...");
 
