@@ -6,6 +6,7 @@
 
 + MagicSquareN - Creation of a magic circle from an odd, singly- and doubly-even 'n'. 
   + (UPGRADE) Multithread solution for doubly-even 'n'.
+  + (UPGRADE) Adding all results to Postgres via JDBC.
 
 + VillageClub - Counts all probabilities for 2^64.
 
@@ -13,3 +14,5 @@
 
 + NetworkSocketTask - Examples of TCP and UDP connections with socket.
   + (UPGRADE) File transfer between server and client.
+
++ EchoRMI - Simple RMI service - Server reverts a string send by client.
