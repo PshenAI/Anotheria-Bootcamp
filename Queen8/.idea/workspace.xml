@@ -4,25 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f0706c3c-f624-46f1-b7cd-76acfe737dd3" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/../MagicSquareN/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../MagicSquareN/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../MagicSquareN/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../MagicSquareN/MagicSquare12.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../MagicSquareN/MagicSquare3.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../MagicSquareN/MagicSquare4.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../MagicSquareN/MagicSquare5.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../MagicSquareN/MagicSquare6.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../MagicSquareN/MagicSquare7.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../MagicSquareN/MagicSquare8.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../MagicSquareN/MagicSquareN.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../MagicSquareN/MagicSquareN.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../MagicSquareN/out/production/MagicSquareN/main/Main.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../MagicSquareN/out/production/MagicSquareN/main/MultiDoublySquare.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../MagicSquareN/src/main/Main.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/main/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/main/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/main/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/main/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../README.md" beforeDir="false" afterPath="$PROJECT_DIR$/../README.md" afterDir="false" />
-    </list>
+    <list default="true" id="f0706c3c-f624-46f1-b7cd-76acfe737dd3" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -50,7 +32,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "C:/Users/Velvet X/Documents/Java Studies/Anotheria-Bootcamp/Queen8",
+    "last_opened_file_path": "C:/Users/Velvet X/Documents/Java Studies/Anotheria-Bootcamp/EchoRMI",
     "settings.editor.selected.configurable": "configurable.group.appearance"
   }
 }]]></component>
@@ -77,6 +59,7 @@
       <workItem from="1652904309439" duration="163000" />
       <workItem from="1652905354380" duration="469000" />
       <workItem from="1652946377044" duration="2591000" />
+      <workItem from="1652959954412" duration="10000" />
     </task>
     <servers />
   </component>
