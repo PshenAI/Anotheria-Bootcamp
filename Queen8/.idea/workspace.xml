@@ -5,22 +5,23 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f0706c3c-f624-46f1-b7cd-76acfe737dd3" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../NetworkSocketTask/out/production/NetworkSocketTask/main/ftp/Client.class" beforeDir="false" afterPath="$PROJECT_DIR$/../NetworkSocketTask/out/production/NetworkSocketTask/main/ftp/Client.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../NetworkSocketTask/out/production/NetworkSocketTask/main/ftp/RequestHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/../NetworkSocketTask/out/production/NetworkSocketTask/main/ftp/RequestHandler.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../NetworkSocketTask/out/production/NetworkSocketTask/main/ftp/Server.class" beforeDir="false" afterPath="$PROJECT_DIR$/../NetworkSocketTask/out/production/NetworkSocketTask/main/ftp/Server.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/artifacts/Queen8_jar.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Queen8.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../EchoRMI/EchoRMI.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/Queen8_jar/Queen8.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Queen8/META-INF/MANIFEST.MF" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Queen8/main/Main.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/META-INF/MANIFEST.MF" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MagicSquareN/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MagicSquareN/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../MagicSquareN/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MagicSquareN/MagicSquare12.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MagicSquareN/MagicSquare3.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MagicSquareN/MagicSquare4.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MagicSquareN/MagicSquare5.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MagicSquareN/MagicSquare6.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MagicSquareN/MagicSquare7.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MagicSquareN/MagicSquare8.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MagicSquareN/MagicSquareN.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../MagicSquareN/MagicSquareN.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MagicSquareN/out/production/MagicSquareN/main/Main.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MagicSquareN/out/production/MagicSquareN/main/MultiDoublySquare.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MagicSquareN/src/main/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/main/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/main/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/main/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/main/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../README.md" beforeDir="false" afterPath="$PROJECT_DIR$/../README.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -72,6 +73,10 @@
       <updated>1652880820829</updated>
       <workItem from="1652880822204" duration="969000" />
       <workItem from="1652884059650" duration="2223000" />
+      <workItem from="1652904165781" duration="51000" />
+      <workItem from="1652904309439" duration="163000" />
+      <workItem from="1652905354380" duration="469000" />
+      <workItem from="1652946377044" duration="2591000" />
     </task>
     <servers />
   </component>

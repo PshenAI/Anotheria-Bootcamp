@@ -39,7 +39,7 @@ public class Main {
         try(Statement st = conn.createStatement()) {
             st.execute("DROP TABLE IF EXISTS QUEENS");
             st.execute("CREATE TABLE QUEENS (ID SERIAL PRIMARY KEY, AXISX INT " +
-                    "NOT NULL, AXISY INT NOT NULL, QUEEN INT NOT NULL)");
+                    "NOT NULL, AXISY INT NOT NULL, SOLUTION INT NOT NULL)");
         }
     }
 
@@ -87,7 +87,7 @@ public class Main {
 
             for (int i = 0; i < queenRow.length; i++) {
                 try(PreparedStatement ps = conn.prepareStatement(
-                        "INSERT INTO QUEENS (AXISX, AXISY, QUEEN) VALUES(?, ?, ?)")){
+                        "INSERT INTO QUEENS (AXISX, AXISY, SOLUTION) VALUES(?, ?, ?)")){
                     ps.setInt(1, queenRow[i]);
                     ps.setInt(2, queenCol[i]);
                     ps.setInt(3, totalCount);

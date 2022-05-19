@@ -1,5 +1,8 @@
-package main;
+package com.pshenai.magicsquaren;
 
+import org.springframework.stereotype.Service;
+
+import javax.transaction.Transactional;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
@@ -8,7 +11,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
-import static main.Main.n;
+import static com.pshenai.magicsquaren.MagicSquareService.n;
 
 class MultiDoublySquare implements Runnable{
     int forI;
@@ -37,62 +40,80 @@ class MultiDoublySquare implements Runnable{
     }
 }
 
-public class Main {
+@Service
+public class MagicSquareService {
+
+    private final MagicSquareRepository squareRepository;
 
     public static int n;
 
-    public static void main(String[] args) throws IOException {
+    public MagicSquareService(MagicSquareRepository squareRepository) {
+        this.squareRepository = squareRepository;
+    }
+
+    public void calculateSquare() throws IOException {
+        int counter = 0;
         Scanner sc = new Scanner(System.in);
-        System.out.println("Enter the 'n' number for the square: ");
+
         while(true){
-            n = sc.nextInt();
-            if(n < 3){
-                System.out.println("You've entered wrong number, try again: ");
-            } else{
-               break;
-            }
-        }
-        int[][] mSquare = new int[n][n];
 
-        //===============================
-        //SOLUTION
-        //===============================
-        long nano1 = System.nanoTime();
+            if(counter > 0){
+                System.out.println("Do you want to continue?");
+                sc.nextLine();
+                String answer = sc.nextLine();
 
-
-        if(n % 2 != 0){
-            mSquare = oddMSquare(n);
-        } else if(n % 4 == 0){
-            doublyEvenMSquare(mSquare);
-        } else {
-            mSquare =singlyEvenMSquare(n);
-        }
-
-        long nano2 = System.nanoTime();
-
-        System.out.println(nano2 - nano1);
-
-        //===============================
-        //DISPLAY
-        //===============================
-
-        String fileName = "MagicSquare" + n + ".txt";
-
-        File fl = new File(fileName);
-        if(fl.createNewFile()){
-            try(PrintWriter pw = new PrintWriter(new FileWriter(fileName))){
-                for (int i = -1; i < n + 1; i++) {
-                    for (int j = 0; j < n; j++) {
-                        if(i == -1 || i == n){
-                            pw.print("***");
-                        } else {
-                            pw.print(mSquare[i][j] + "  ");
-                        }
-                    }
-                    pw.println();
+                if(answer.equals("no")){
+                    break;
                 }
             }
+
+            System.out.println("Enter the 'n' number for the square: ");
+            while(true){
+                n = sc.nextInt();
+                if(n < 3){
+                    System.out.println("You've entered wrong number, try again: ");
+                } else{
+                    break;
+                }
+            }
+            int[][] mSquare = new int[n][n];
+
+            //===============================
+            //SOLUTION
+            //===============================
+            long nano1 = System.nanoTime();
+
+
+            if(n % 2 != 0){
+                mSquare = oddMSquare(n);
+            } else if(n % 4 == 0){
+                doublyEvenMSquare(mSquare);
+            } else {
+                mSquare =singlyEvenMSquare(n);
+            }
+
+            long nano2 = System.nanoTime();
+
+            System.out.println(nano2 - nano1);
+
+            //===============================
+            //DB OUTPUT
+            //===============================
+
+            for (int i = 0; i < n; i++) {
+                for (int j = 0; j < n; j++) {
+                    addTile(mSquare[i][j], (i + " " + j));
+                }
+            }
+
+            counter++;
         }
+
+    }
+
+    @Transactional
+    public void addTile(Integer value, String tilePos){
+        squareRepository.save(new MagicSquareTile(n, value, tilePos));
     }
 
     //===============================
