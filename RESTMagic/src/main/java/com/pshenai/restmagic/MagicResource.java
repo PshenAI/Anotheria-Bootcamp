@@ -27,15 +27,15 @@ public class MagicResource {
 
     @GET
     @Produces("application/json")
-    @Path("/tiles")
-    public List<MagicSquareTile> getAllTiles() {
-        return squareRepository.findAll();
+    @Path("/square/{n}")
+    public List<MagicSquareTile> getAllBySqaureNum(@PathParam(value = "n") Integer squareSize) {
+        return squareRepository.findAllBySquareNum(squareSize);
     }
 
     @GET
     @Produces("application/json")
     @Path("/tile/{id}")
-    public ResponseEntity<MagicSquareTile> getUserById(@PathParam(value = "id") Long squareId) throws NullPointerException {
+    public ResponseEntity<MagicSquareTile> getSquareById(@PathParam(value = "id") Long squareId) throws NullPointerException {
         MagicSquareTile user = squareRepository.findById(squareId)
                 .orElseThrow(() -> new NullPointerException("Tile not found - " + squareId));
         return ResponseEntity.ok().body(user);
