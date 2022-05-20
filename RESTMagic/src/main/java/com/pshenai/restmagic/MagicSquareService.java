@@ -1,4 +1,4 @@
-package com.pshenai.magicsquaren;
+package com.pshenai.restmagic;
 
 import org.springframework.stereotype.Service;
 
@@ -7,8 +7,6 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
-
-import static com.pshenai.magicsquaren.MagicSquareService.n;
 
 class MultiDoublySquare implements Runnable{
     int forI;
@@ -30,7 +28,7 @@ class MultiDoublySquare implements Runnable{
         System.out.println("Thread started!");
         for (int i = forI; i < compI; i++){//All corners and center
             for (int j = forJ; j < compJ; j++){
-                mSquare[i][j] = (n*n + 1) - mSquare[i][j];
+                mSquare[i][j] = (MagicSquareService.n* MagicSquareService.n + 1) - mSquare[i][j];
             }
         }
         System.out.println("Work done!");
@@ -48,31 +46,32 @@ public class MagicSquareService {
         this.squareRepository = squareRepository;
     }
 
-    public void calculateSquare() throws IOException {
+    public void calculateSquare(int squareNum) throws IOException {
         int counter = 0;
-        Scanner sc = new Scanner(System.in);
+        n = squareNum;
+//        Scanner sc = new Scanner(System.in);
 
-        while(true){
+//        while(true){
 
-            if(counter > 0){
-                System.out.println("Do you want to continue?");
-                sc.nextLine();
-                String answer = sc.nextLine();
-
-                if(answer.equals("no")){
-                    break;
-                }
-            }
-
-            System.out.println("Enter the 'n' number for the square: ");
-            while(true){
-                n = sc.nextInt();
-                if(n < 3){
-                    System.out.println("You've entered wrong number, try again: ");
-                } else{
-                    break;
-                }
-            }
+//            if(counter > 0){
+//                System.out.println("Do you want to continue?");
+//                sc.nextLine();
+//                String answer = sc.nextLine();
+//
+//                if(answer.equals("no")){
+//                    break;
+//                }
+//            }
+//
+//            System.out.println("Enter the 'n' number for the square: ");
+//            while(true){
+//                n = sc.nextInt();
+//                if(n < 3){
+//                    System.out.println("You've entered wrong number, try again: ");
+//                } else{
+//                    break;
+//                }
+//            }
             int[][] mSquare = new int[n][n];
 
             //===============================
@@ -104,7 +103,7 @@ public class MagicSquareService {
             }
 
             counter++;
-        }
+//        }
 
     }
 

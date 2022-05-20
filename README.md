@@ -17,3 +17,7 @@
   + (UPGRADE) File transfer between server and client.
 
 + EchoRMI - Simple RMI service - Server reverts a string send by client.
+
+
++ RESTMagic - RESTful service for CRUD-operations with magic squares via Jersey.
+
