@@ -7,9 +7,9 @@ import java.rmi.server.UnicastRemoteObject;
 public class Server implements Echo{
 
     @Override
-    public String echo(String aString) {
-        System.out.println("Request: " + aString);
-        return new StringBuilder(aString).reverse().toString();
+    public Track echo(Track aTrack) {
+        System.out.println("Request: " + aTrack);
+        return aTrack;
     }
 
     public static void main(String[] args) {
